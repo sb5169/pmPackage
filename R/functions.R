@@ -26,7 +26,7 @@ readfile<-function(file){
 # #' nestedcv(2,1,train,"rf","Survived")
 
 
-nestedcv<- function(n,r,data,model,x)
+nestedcv2<- function(n,r,data,model,x)
 {
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
