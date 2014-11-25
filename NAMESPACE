@@ -1,1 +1,8 @@
 exportPattern("^[^\\.]")
+import(caret, pROC, cvTools, testthat)
+importFrom("caret", createFolds)
+importFrom("caret", train)
+importFrom("caret", trainControl)
+importFrom("caret", twoClassSummary)
+importFrom("cvTools", cvFolds)
+importFrom("testthat", expect_equal)
