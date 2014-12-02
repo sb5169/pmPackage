@@ -1,2 +1,2 @@
 exportPattern("^[^\\.]")
-import(caret, pROC, cvTools, testthat)
+import(caret, pROC, cvTools, testthat,cvAUC)

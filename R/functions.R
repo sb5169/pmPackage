@@ -23,7 +23,7 @@ readfile<-function(file){
 # #' @param x Column name which represents the class you are trying to predict.
 # #' @return Returns the accuracy score of the nested cross validation code.
 # #' @examples
-# #' nestedcv(2,1,train,"rf","Survived")
+# #' nestedcv2(2,1,train,"rf","Survived")
 
 
 nestedcv2<- function(n,r,data,model,x)
@@ -61,3 +61,36 @@ nestedcv2<- function(n,r,data,model,x)
   return(score)
 }
 
+
+nestedcv3<- function(n,r,data,model,x)
+{
+  trainData<-na.omit(data);
+  colnames(trainData)[which(names(trainData) == x)] <- "Class";
+  AUC_values <- numeric();
+  set.seed(500);
+
+  for(i in 1:r){
+    folds <- cvFolds(nrow(trainData), K=n);
+    for (j in 1:n){
+      Lset <- trainData[folds$subsets[folds$which != j], ];#Set the training set
+      expect_equal(object = nrow(Lset), expected = (nrow(trainData)/n) *(n-1), tolerance=.01);
+      Tset <- trainData[folds$subsets[folds$which == j], ];
+      expect_equal(object = nrow(Tset), expected = nrow(trainData)/n, tolerance=.01);
+      fitControl <- trainControl(method = "repeatedcv",
+                                 number = n,
+                                 repeats = r);
+      fit <- train(as.factor(Class) ~ .,
+                   data=Lset,
+                   na.action=na.omit,
+                   importance=TRUE,
+                   method=model,
+                   trControl = fitControl);
+      fit;
+      prediction<-predict(fit,newdata=Tset,na.action=na.omit);
+      expect_equal(object = length(prediction), expected = nrow(Tset));
+      AUC_values<-AUC(prediction,Tset);
+    }
+  }
+  score<-mean(AUC_values)
+  return(score)
+}
