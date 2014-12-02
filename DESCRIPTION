@@ -5,6 +5,6 @@ Authors@R: "Sana Badri <Sana.Badri@nyumc.org.com> [aut, cre]"
 Description: What the package does (one paragraph)
 Imports:caret, pROC, cvTools, testthat,cvAUC
 Depends:
-    R (>= 3.1.1)
+    R (>= 3.1.2)
 License: What license is it under?
 LazyData: true

@@ -61,8 +61,18 @@ nestedcv2<- function(n,r,data,model,x)
   return(score)
 }
 
+# #' Run Nested Cross Validation on Training Data using AUC
+# #'
+# #' @param r Number of repeats for the nested cross validation code.
+# #' @param n Number of folds for the nested cross validation code.
+# #' @param data The dataframe with training data.
+# #' @param model Model used for nested cross validation code.
+# #' @param x Column name which represents the class you are trying to predict.
+# #' @return Returns the AUC score of the nested cross validation code.
+# #' @examples
+# #' AUC_Sana(2,1,train,"rf","Survived")
 
-nestedcv3<- function(n,r,data,model,x)
+AUC_Sana<- function(n,r,data,model,x)
 {
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
