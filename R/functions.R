@@ -88,7 +88,7 @@ nestedcv3<- function(n,r,data,model,x)
       fit;
       prediction<-predict(fit,newdata=Tset,na.action=na.omit);
       expect_equal(object = length(prediction), expected = nrow(Tset));
-      AUC_values<-AUC(prediction,Tset);
+      AUC_values<-AUC(prediction,Tset)
     }
   }
   score<-mean(AUC_values)
