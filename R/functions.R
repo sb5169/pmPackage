@@ -77,6 +77,7 @@ AUC_Sana<- function(n,r,data,model,x)
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
   AUC_values <- numeric();
+  prediction<-numeric();
   set.seed(500);
 
   for(i in 1:r){
