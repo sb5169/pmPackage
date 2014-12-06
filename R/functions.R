@@ -77,6 +77,7 @@ AUC_Sana<- function(n,r,data,model,x)
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
   prediction<-numeric();
+  AUC_values <- numeric();
   set.seed(500);
 
   for(i in 1:r){
@@ -95,7 +96,6 @@ AUC_Sana<- function(n,r,data,model,x)
                    importance=TRUE,
                    method=model,
                    trControl = fitControl);
-      fit;
       prediction<-predict(fit,newdata=Tset,na.action=na.omit);
       expect_equal(object = length(prediction), expected = nrow(Tset));
       #auc<-AUC(as.numeric(prediction),Tset$Class);
@@ -107,3 +107,5 @@ AUC_Sana<- function(n,r,data,model,x)
   score<-mean(AUC_values)
   return(score)
 }
+
+
