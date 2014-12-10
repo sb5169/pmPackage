@@ -1,4 +1,4 @@
-SanaPackage
+pmPackage
 ===========
 
 To install this package, use devtools. 
