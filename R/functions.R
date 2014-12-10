@@ -1,5 +1,5 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("Welcome to Sana's Package, providing predictive modeling tools for your research. Hope you find it useful!")
+  packageStartupMessage("Welcome to Sana's Package, Hope you find it useful!")
 }
 
 
