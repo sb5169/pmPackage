@@ -14,7 +14,7 @@ readfile<-function(file){
   data<- read.csv(file, header = TRUE, stringsAsFactors=TRUE);
 }
 
-#' Run Nested Cross Validation on Training Data using accuracy
+#' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
 #' @param n Number of folds for the nested cross validation code.
@@ -60,7 +60,7 @@ ncv_accuracy<- function(n,r,data,model,x)
   return(score)
 }
 
-#' Run Nested Cross Validation on Training Data using AUC
+#' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
 #' @param n Number of folds for the nested cross validation code.
