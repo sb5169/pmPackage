@@ -15,6 +15,7 @@ readfile<-function(file){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
@@ -26,6 +27,8 @@ readfile<-function(file){
 #' @examples
 #' ncv_accuracy(2,1,train,"rf","Survived")
 =======
+=======
+>>>>>>> parent of 1dc92cf... Documentation Edits
 # #' Run Nested Cross Validation on Training Data
 # #'
 # #' @param r Number of repeats for the nested cross validation code.
@@ -36,6 +39,9 @@ readfile<-function(file){
 # #' @return Returns the accuracy score of the nested cross validation code.
 # #' @examples
 # #' nestedcv2(2,1,train,"rf","Survived")
+<<<<<<< HEAD
+>>>>>>> parent of 1dc92cf... Documentation Edits
+=======
 >>>>>>> parent of 1dc92cf... Documentation Edits
 
 
@@ -75,6 +81,7 @@ nestedcv2<- function(n,r,data,model,x)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
@@ -86,6 +93,8 @@ nestedcv2<- function(n,r,data,model,x)
 #' @examples
 #' ncv_auc(2,1,train,"rf","Survived")
 =======
+=======
+>>>>>>> parent of 1dc92cf... Documentation Edits
 # #' Run Nested Cross Validation on Training Data using AUC
 # #'
 # #' @param r Number of repeats for the nested cross validation code.
@@ -96,6 +105,9 @@ nestedcv2<- function(n,r,data,model,x)
 # #' @return Returns the AUC score of the nested cross validation code.
 # #' @examples
 # #' AUC_Sana(2,1,train,"rf","Survived")
+<<<<<<< HEAD
+>>>>>>> parent of 1dc92cf... Documentation Edits
+=======
 >>>>>>> parent of 1dc92cf... Documentation Edits
 
 AUC_Sana<- function(n,r,data,model,x)
