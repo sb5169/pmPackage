@@ -3,17 +3,18 @@
 }
 
 
-#' Read dataframe file into R
-#'
-#' @param file A csv file with training dataframe that you want to read.
-#' @return Returns training dataframe
-#' @examples
-#' data<-readfile("train.csv")
+# #' Read dataframe file into R
+# #'
+# #' @param file A csv file with training dataframe that you want to read.
+# #' @return Returns training dataframe
+# #' @examples
+# #' data<-readfile("train.csv")
 
 readfile<-function(file){
   data<- read.csv(file, header = TRUE, stringsAsFactors=TRUE);
 }
 
+<<<<<<< HEAD
 #' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
@@ -24,8 +25,21 @@ readfile<-function(file){
 #' @return Returns the accuracy score of the nested cross validation code.
 #' @examples
 #' ncv_accuracy(2,1,train,"rf","Survived")
+=======
+# #' Run Nested Cross Validation on Training Data
+# #'
+# #' @param r Number of repeats for the nested cross validation code.
+# #' @param n Number of folds for the nested cross validation code.
+# #' @param data The dataframe with training data.
+# #' @param model Model used for nested cross validation code.
+# #' @param x Column name which represents the class you are trying to predict.
+# #' @return Returns the accuracy score of the nested cross validation code.
+# #' @examples
+# #' nestedcv2(2,1,train,"rf","Survived")
+>>>>>>> parent of 1dc92cf... Documentation Edits
 
-ncv_accuracy<- function(n,r,data,model,x)
+
+nestedcv2<- function(n,r,data,model,x)
 {
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
@@ -60,6 +74,7 @@ ncv_accuracy<- function(n,r,data,model,x)
   return(score)
 }
 
+<<<<<<< HEAD
 #' Run Nested Cross Validation on Training Data
 #'
 #' @param r Number of repeats for the nested cross validation code.
@@ -70,8 +85,20 @@ ncv_accuracy<- function(n,r,data,model,x)
 #' @return Returns the AUC score of the nested cross validation code.
 #' @examples
 #' ncv_auc(2,1,train,"rf","Survived")
+=======
+# #' Run Nested Cross Validation on Training Data using AUC
+# #'
+# #' @param r Number of repeats for the nested cross validation code.
+# #' @param n Number of folds for the nested cross validation code.
+# #' @param data The dataframe with training data.
+# #' @param model Model used for nested cross validation code.
+# #' @param x Column name which represents the class you are trying to predict.
+# #' @return Returns the AUC score of the nested cross validation code.
+# #' @examples
+# #' AUC_Sana(2,1,train,"rf","Survived")
+>>>>>>> parent of 1dc92cf... Documentation Edits
 
-ncv_auc<- function(n,r,data,model,x)
+AUC_Sana<- function(n,r,data,model,x)
 {
   trainData<-na.omit(data);
   colnames(trainData)[which(names(trainData) == x)] <- "Class";
@@ -107,13 +134,4 @@ ncv_auc<- function(n,r,data,model,x)
   return(score)
 }
 
-# #' Run Nested Cross Validation on Training Data
-# #'
-# #' @param r Number of repeats for the nested cross validation code.
-# #' @param n Number of folds for the nested cross validation code.
-# #' @param data The dataframe with training data.
-# #' @param model Model used for nested cross validation code.
-# #' @param x Column name which represents the class you are trying to predict.
-# #' @return Returns the AUC score of the nested cross validation code.
-# #' @examples
-# #' ncv_global(2,1,train,"rf","Survived")
+

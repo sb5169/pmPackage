@@ -2,6 +2,7 @@ Package: pmPackage
 Title: Provides Predictive Modeling Tools
 Version: 0.1
 Authors@R: "Sana Badri <Sana.Badri@nyumc.org.com> [aut, cre]"
+<<<<<<< HEAD
 Description: The pmPackage provides predictive modeling tools. More specifically, functions that assist with model assessment and model selection.
 Imports:
     caret,
@@ -10,6 +11,10 @@ Imports:
     testthat,
     cvAUC,
     caTools
+=======
+Description: What the package does (one paragraph)
+Imports:caret, pROC, cvTools, testthat,cvAUC
+>>>>>>> parent of 1dc92cf... Documentation Edits
 Depends:
     R (>= 3.1.2)
 License: What license is it under?
