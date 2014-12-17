@@ -80,7 +80,7 @@ ncv_auc<- function(n,r,data,model,x)
   set.seed(500);
 
   for(i in 1:r){
-    folds <- cvFolds(nrow(trainData), K=n);
+    folds <- cvFolds(nrow(trainData), K = abs(n);
     for (j in 1:n){
       Lset <- trainData[folds$subsets[folds$which != j], ];#Set the training set
       expect_equal(object = nrow(Lset), expected = (nrow(trainData)/n) *(n-1), tolerance=.01);
